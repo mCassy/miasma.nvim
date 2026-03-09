@@ -475,6 +475,33 @@ if get(g:, "miasma_transparent", 0)
   " cursorline
   hi CursorLine guibg=NONE
 
+  " directory
+  hi Directory guibg=NONE
+
+  " neo-tree
+  hi NeoTreeNormal guibg=NONE
+  hi NeoTreeNormalNC guibg=NONE
+  hi NeoTreeEndOfBuffer guibg=NONE
+  hi NeoTreeSignColumn guibg=NONE
+  hi NeoTreeFloatBorder guibg=NONE
+  hi NeoTreeFloatNormal guibg=NONE
+  hi NeoTreeFloatTitle guibg=NONE
+  hi NeoTreeTitleBar guibg=NONE
+  hi NeoTreeCursorLine guibg=NONE
+  hi NeoTreeDirectoryName guibg=NONE
+  hi NeoTreeDirectoryIcon guibg=NONE
+  hi NeoTreeFileName guibg=NONE
+  hi NeoTreeFileIcon guibg=NONE
+  hi NeoTreeGitAdded guibg=NONE
+  hi NeoTreeGitConflict guibg=NONE
+  hi NeoTreeGitDeleted guibg=NONE
+  hi NeoTreeGitIgnored guibg=NONE
+  hi NeoTreeGitModified guibg=NONE
+  hi NeoTreeGitRenamed guibg=NONE
+  hi NeoTreeGitStaged guibg=NONE
+  hi NeoTreeGitUnstaged guibg=NONE
+  hi NeoTreeGitUntracked guibg=NONE
+
   " telescope
   hi TelescopeNormal guibg=NONE
   hi TelescopeBorder guibg=NONE
@@ -495,6 +522,15 @@ if get(g:, "miasma_transparent", 0)
   hi NoiceCmdlinePopupBorder guifg=#685742 guibg=NONE
   hi NoiceCmdlinePopupTitle guifg=#5f875f guibg=NONE
   " hi NoiceCmdlinePopup guifg=#d7c483 guibg=NONE
+
+  " which-key
+  hi WhichKey guibg=NONE
+  hi WhichKeyBorder guibg=NONE
+  hi WhichKeyDesc guibg=NONE
+  hi WhichKeyFloat guibg=NONE
+  hi WhichKeyGroup guibg=NONE
+  hi WhichKeySeparator guibg=NONE
+  hi WhichKeyValue guibg=NONE
 
   " lazy.nvim
   hi LazyNormal guibg=NONE
