@@ -14,28 +14,15 @@ endif
 let colors_name="miasma"
 let g:colors_name="miasma"
 
-if exists("g:miasma_transparent") && g:miasma_transparent>= 1
-    hi Normal guifg=#D7C483 guibg=NONE guisp=NONE blend=NONE gui=NONE
-    hi LineNr guifg=#666666 guibg=NONE guisp=NONE blend=NONE gui=NONE
-    hi VertSplit guifg=#1c1c1c guibg=NONE guisp=NONE blend=NONE gui=NONE
-    hi TelescopeBorder guifg=#685742 guibg=NONE guisp=NONE blend=NONE gui=NONE
-    hi TelescopePromptBorder guifg=#b36d43 guibg=NONE guisp=NONE blend=NONE gui=NONE
-    hi TelescopeTitle guifg=#5f875f guibg=NONE guisp=NONE blend=NONE gui=NONE
-    hi Directory guifg=#78824b guibg=NONE guisp=NONE blend=NONE gui=NONE
-    hi StatusLine guifg=#d7c483 guibg=NONE guisp=NONE ctermbg=NONE blend=NONE gui=bold
-    hi StatusLineNC guifg=#666666 guibg=NONE guisp=NONE ctermbg=NONE blend=NONE gui=bold
-else
-    hi Normal guifg=#D7C483 guibg=#222222 guisp=NONE blend=NONE gui=NONE
-    hi LineNr guifg=#666666 guibg=#1c1c1c guisp=NONE blend=NONE gui=NONE
-    hi VertSplit guifg=#1c1c1c guibg=#222222 guisp=NONE blend=NONE gui=NONE
-    hi TelescopeBorder guifg=#685742 guibg=#1c1c1c guisp=NONE blend=NONE gui=NONE
-    hi TelescopePromptBorder guifg=#b36d43 guibg=#1c1c1c guisp=NONE blend=NONE gui=NONE
-    hi TelescopeTitle guifg=#5f875f guibg=#1c1c1c guisp=NONE blend=NONE gui=NONE
-    hi Directory guifg=#78824b guibg=#1c1c1c guisp=NONE blend=NONE gui=NONE
-    hi StatusLine guifg=#d7c483 guibg=#222222 guisp=NONE blend=NONE gui=bold
-    hi StatusLineNC guifg=#666666 guibg=#222222 guisp=NONE blend=NONE gui=bold
-endif
-
+hi Normal guifg=#D7C483 guibg=#222222 guisp=NONE blend=NONE gui=NONE
+hi LineNr guifg=#666666 guibg=#1c1c1c guisp=NONE blend=NONE gui=NONE
+hi VertSplit guifg=#1c1c1c guibg=#222222 guisp=NONE blend=NONE gui=NONE
+hi TelescopeBorder guifg=#685742 guibg=#1c1c1c guisp=NONE blend=NONE gui=NONE
+hi TelescopePromptBorder guifg=#b36d43 guibg=#1c1c1c guisp=NONE blend=NONE gui=NONE
+hi TelescopeTitle guifg=#5f875f guibg=#1c1c1c guisp=NONE blend=NONE gui=NONE
+hi Directory guifg=#78824b guibg=#1c1c1c guisp=NONE blend=NONE gui=NONE
+hi StatusLine guifg=#d7c483 guibg=#222222 guisp=NONE blend=NONE gui=bold
+hi StatusLineNC guifg=#666666 guibg=#222222 guisp=NONE blend=NONE gui=bold
 hi Boolean guifg=#78834b guibg=NONE guisp=NONE blend=NONE gui=NONE
 hi ColorColumn guifg=NONE guibg=#222222 guisp=NONE blend=NONE gui=NONE
 hi Comment guifg=#666666 guibg=NONE guisp=NONE blend=NONE gui=NONE
@@ -449,3 +436,67 @@ hi WildMenu guifg=black guibg=#c9a554 guisp=NONE blend=NONE gui=NONE
 hi WinBar guifg=NONE guibg=NONE guisp=NONE blend=NONE gui=bold
 hi xmlTag guifg=#78824b guibg=NONE guisp=NONE blend=NONE gui=NONE
 hi xmlTagName guifg=#78834b guibg=NONE guisp=NONE blend=NONE gui=NONE
+
+" ------------------------------------------------------------------
+" Transparency support
+" ------------------------------------------------------------------
+
+if get(g:, "miasma_transparent", 0)
+
+  " core editor
+  hi Normal guibg=NONE ctermbg=NONE
+  hi NormalNC guibg=NONE
+  hi EndOfBuffer guibg=NONE
+
+  " floating windows
+  hi NormalFloat guibg=NONE
+  hi FloatBorder guibg=NONE
+  hi FloatTitle guibg=NONE
+
+  " columns
+  hi SignColumn guibg=NONE
+  hi FoldColumn guibg=NONE
+  hi LineNr guibg=NONE
+  hi CursorLineNr guibg=NONE
+
+  " UI bars
+  hi StatusLine guibg=NONE
+  hi StatusLineNC guibg=NONE
+  hi WinBar guibg=NONE
+  hi TabLine guibg=NONE
+  hi TabLineFill guibg=NONE
+
+  " popup menus
+  hi Pmenu guibg=NONE
+  hi PmenuSel guibg=NONE
+  hi PmenuSbar guibg=NONE
+  hi PmenuThumb guibg=NONE
+
+  " cursorline
+  hi CursorLine guibg=NONE
+
+  " telescope
+  hi TelescopeNormal guibg=NONE
+  hi TelescopeBorder guibg=NONE
+  hi TelescopePromptBorder guibg=NONE
+  hi TelescopeResultsBorder guibg=NONE
+  hi TelescopePreviewBorder guibg=NONE
+
+  " blink.cmp
+  hi BlinkCmpMenu guibg=NONE
+  hi BlinkCmpMenuBorder guibg=NONE
+  hi BlinkCmpDoc guibg=NONE
+  hi BlinkCmpDocBorder guibg=NONE
+  hi BlinkCmpSignatureHelp guibg=NONE
+  hi BlinkCmpSignatureHelpBorder guibg=NONE
+  hi BlinkCmpMenuSelection guifg=#222222 guibg=#78834b
+
+  hi NoiceCmdlinePopup guibg=NONE
+  hi NoiceCmdlinePopupBorder guifg=#685742 guibg=NONE
+  hi NoiceCmdlinePopupTitle guifg=#5f875f guibg=NONE
+  " hi NoiceCmdlinePopup guifg=#d7c483 guibg=NONE
+
+  " lazy.nvim
+  hi LazyNormal guibg=NONE
+
+endif
