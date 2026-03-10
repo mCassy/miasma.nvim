@@ -541,6 +541,12 @@ if get(g:, "miasma_transparent", 0)
   hi LineNr guibg=NONE
   hi CursorLineNr guibg=NONE
 
+  " diagnostic signs
+  hi DiagnosticSignError guibg=NONE
+  hi DiagnosticSignWarn guibg=NONE
+  hi DiagnosticSignInfo guibg=NONE
+  hi DiagnosticSignHint guibg=NONE
+
   " UI bars
   hi StatusLine guibg=NONE
   hi StatusLineNC guibg=NONE
