@@ -4,7 +4,7 @@ Fork of [xero/miasma.nvim](https://github.com/xero/miasma.nvim) with added trans
 
 A color scheme for `{neo,}vim` inspired by the woods.
 
-![theme preview](https://raw.githubusercontent.com/xero/miasma.nvim/main/preview.png)
+![theme preview](https://raw.githubusercontent.com/mCassy/miasma.nvim/main/preview.png)
 
 ## Supported Plugins
 
@@ -22,6 +22,7 @@ A color scheme for `{neo,}vim` inspired by the woods.
 - [which-key.nvim](https://github.com/folke/which-key.nvim) - Keybinding popup
 
 Also includes support for:
+
 - LSP diagnostics (signs, virtual text, floating windows)
 - Treesitter syntax highlighting
 - Native vim syntax groups
