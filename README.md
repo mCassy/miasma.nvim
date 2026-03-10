@@ -169,6 +169,7 @@ colors/
 
 This theme has been ported to a few different apps, and are included in the `extras` directory:
 
+- `miasma.theme` - colors for [btop](https://github.com/aristocratos/btop) (copy to `~/.config/btop/themes/`)
 - `miasma.Xresources` - colors for [xclients](https://wiki.archlinux.org/title/x_resources) (e.g. unix terminal emulators)
 - `miasma.itermcolors` - colors for [iterm2](https://iterm2.com)
 - `miasma.fish` - colors for [fish](https://fishshell.com/)
