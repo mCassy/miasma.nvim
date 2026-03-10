@@ -35,19 +35,9 @@ Also includes support for:
 a fog descends upon your editor
 https://github.com/xero/miasma.nvim
 
-## flavors
+## Installation
 
-this theme is available in a classic vim compatible format, optimized lua, and a development lua version. you can install different flavors by using the corresponding branches:
-
-- [main](https://github.com/xero/miasma.nvim/tree/main) - classic vim version
-- lua - optimized lua version (coming soon)
-- [dev](https://github.com/xero/miasma.nvim/tree/dev) - development lua version
-
-for speed and greatest compatibility, use the main branch.
-
-## installation
-
-using `lazy`
+Using `lazy.nvim`:
 
 ```lua
 {
@@ -55,40 +45,129 @@ using `lazy`
   lazy = false,
   priority = 1000,
   config = function()
-    vim.g.miasma_transparent = 1 -- Enable transparency
     vim.cmd("colorscheme miasma")
   end,
 }
 ```
 
-using `plug`
+Using `lazy.nvim` with options:
+
+```lua
+{
+  "xero/miasma.nvim",
+  lazy = false,
+  priority = 1000,
+  config = function()
+    require("miasma").setup({
+      transparent = true,      -- Enable transparent backgrounds
+      terminal_colors = true,  -- Set terminal colors (default: true)
+    })
+    vim.cmd("colorscheme miasma")
+  end,
+}
+```
+
+Using `vim-plug`:
 
 ```vim
 Plug 'xero/miasma.nvim'
 colorscheme miasma
 ```
 
-using `packer`
+Using `packer`:
 
 ```lua
 use {"xero/miasma.nvim"}
 vim.cmd("colorscheme miasma")
 ```
 
-## usage
+## Usage
 
-set the color scheme with the builtin command `:colorscheme`
-enable transparency with `vim.g.miasma_transparent = 1` for lua or `let g:miasma_transparent = 1` for vim
+Set the color scheme with the builtin command:
 
-## customization
+```vim
+:colorscheme miasma
+```
 
-this theme is built with `lush.nvim`, so customizations are quite easy.
+### Configuration
 
-first, checkout the [dev](https://github.com/xero/miasma.nvim/tree/dev) branch `git fetch origin dev && git checkout dev`, open the lua theme `nvim lua/lush_theme/miasma.lua` and execute `:Lushify`. then adjust colors to suit your taste with real-time feedback. checkout [the dev branch readme](https://github.com/xero/miasma.nvim/blob/dev/README.md) for details on building the optimized colorscheme. lots more details on using `lush` in [their repo](https://github.com/rktjmp/lush.nvim).
+Configure the theme using the setup function (Neovim 0.8+):
 
-## extras
+```lua
+require("miasma").setup({
+  transparent = false,     -- Enable transparent backgrounds
+  terminal_colors = true,  -- Set terminal colors (0-15)
+})
+```
 
-this theme has been ported to a few different apps, and are included in the `extras` directory:
+Legacy configuration via global variables is still supported:
+
+```lua
+vim.g.miasma_transparent = 1  -- Enable transparency
+```
+
+```vim
+let g:miasma_transparent = 1
+```
+
+### Accessing the Color Palette
+
+You can access the color palette for use in your own configurations:
+
+```lua
+local palette = require("miasma.palette")
+
+-- Use colors in your config
+vim.api.nvim_set_hl(0, "MyCustomGroup", { fg = palette.green, bg = palette.dark })
+
+-- Available colors:
+-- palette.bg        (#222222) - Main background
+-- palette.dark      (#1c1c1c) - Darker background
+-- palette.fg        (#d7c483) - Foreground/cream
+-- palette.gray      (#666666) - Comments, inactive
+-- palette.green     (#5f875f) - Keywords, hints
+-- palette.olive     (#78824b) - Functions, types
+-- palette.brown     (#685742) - Strings, warnings
+-- palette.orange    (#b36d43) - Errors, titles
+-- palette.tan       (#c9a554) - Special elements
+-- palette.rust      (#bb7744) - Constants
+```
+
+### Lualine
+
+The theme includes a lualine theme that automatically uses the miasma colors:
+
+```lua
+require("lualine").setup({
+  options = {
+    theme = "miasma",
+  },
+})
+```
+
+## Project Structure
+
+```
+lua/
+├── lualine/themes/miasma.lua  -- Lualine statusline theme
+└── miasma/
+    ├── init.lua               -- Main entry point
+    ├── config.lua             -- Configuration options
+    ├── palette.lua            -- Color definitions
+    └── groups/
+        ├── editor.lua         -- Core editor highlights
+        ├── syntax.lua         -- Syntax highlighting
+        ├── treesitter.lua     -- Treesitter captures
+        ├── lsp.lua            -- LSP & diagnostics
+        └── plugins.lua        -- Plugin integrations
+colors/
+├── miasma.lua                 -- Lua colorscheme (Neovim 0.8+)
+└── miasma.vim                 -- VimScript fallback
+```
+
+## Extras
+
+This theme has been ported to a few different apps, and are included in the `extras` directory:
 
 - `miasma.Xresources` - colors for [xclients](https://wiki.archlinux.org/title/x_resources) (e.g. unix terminal emulators)
 - `miasma.itermcolors` - colors for [iterm2](https://iterm2.com)
@@ -99,10 +178,10 @@ this theme has been ported to a few different apps, and are included in the `ext
 - `miasma.colorscheme` - colors for [qterminal](https://github.com/lxqt/qterminal)
 - `miasma.ghostty` - colors for [ghostty](https://ghostty.org/)
 
-more on the way, and pr's for others are welcomed!
+More on the way, and PRs for others are welcomed!
 
-# license
+## License
 
 ![kopimi logo](https://gist.githubusercontent.com/xero/cbcd5c38b695004c848b73e5c1c0c779/raw/6b32899b0af238b17383d7a878a69a076139e72d/kopimi-sm.png)
 
-all files and scripts in this repo are released [CC0](https://creativecommons.org/publicdomain/zero/1.0/) / [kopimi](https://kopimi.com)! in the spirit of _freedom of information_, i encourage you to fork, modify, change, share, or do whatever you like with this project! `^c^v`
+All files and scripts in this repo are released [CC0](https://creativecommons.org/publicdomain/zero/1.0/) / [kopimi](https://kopimi.com)! In the spirit of _freedom of information_, I encourage you to fork, modify, change, share, or do whatever you like with this project! `^c^v`
