@@ -1,11 +1,30 @@
-# miasma.nvim ☁️
+# miasma.nvim
 
-Fork of [xero/miasma.nvim](https://github.com/xero/miasma.nvim) with added transparency option
-a color scheme for `{neo,}vim` inspired by the woods, built using [lush](https://github.com/rktjmp/lush.nvim) 👄
+Fork of [xero/miasma.nvim](https://github.com/xero/miasma.nvim) with added transparency support and extended plugin integrations.
 
-supports treesitter, gitsigns, lazy, which-key, telescope, lsp diagnostics, and more.
+A color scheme for `{neo,}vim` inspired by the woods.
 
 ![theme preview](https://raw.githubusercontent.com/xero/miasma.nvim/main/preview.png)
+
+## Supported Plugins
+
+- [blink.cmp](https://github.com/Saghen/blink.cmp) - Completion menu and documentation
+- [bufferline.nvim](https://github.com/akinsho/bufferline.nvim) - Buffer tabs with diagnostics
+- [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) - Git signs, blame, and staged indicators
+- [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim) - Indent guides
+- [lazy.nvim](https://github.com/folke/lazy.nvim) - Plugin manager UI
+- [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim) - Statusline theme
+- [mason.nvim](https://github.com/williamboman/mason.nvim) - Package manager UI
+- [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim) - File explorer with git status
+- [noice.nvim](https://github.com/folke/noice.nvim) - Command line popup
+- [nvim-scrollbar](https://github.com/petertriho/nvim-scrollbar) - Scrollbar with diagnostics
+- [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) - Fuzzy finder
+- [which-key.nvim](https://github.com/folke/which-key.nvim) - Keybinding popup
+
+Also includes support for:
+- LSP diagnostics (signs, virtual text, floating windows)
+- Treesitter syntax highlighting
+- Native vim syntax groups
 
 ```
 ┏┏┓o┳━┓┓━┓┏┏┓┳━┓

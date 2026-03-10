@@ -77,6 +77,32 @@ hi gitCommitUnmergedType guifg=#685742 guibg=NONE guisp=NONE blend=NONE gui=NONE
 hi GitSignsAdd guifg=#5f875f guibg=#1c1c1c guisp=NONE blend=NONE gui=NONE
 hi GitSignsChange guifg=#685742 guibg=#1c1c1c guisp=NONE blend=NONE gui=NONE
 hi GitSignsDelete guifg=#b36d43 guibg=#1c1c1c guisp=NONE blend=NONE gui=NONE
+hi GitSignsChangedelete guifg=#b36d43 guibg=#1c1c1c guisp=NONE blend=NONE gui=NONE
+hi GitSignsTopdelete guifg=#b36d43 guibg=#1c1c1c guisp=NONE blend=NONE gui=NONE
+hi GitSignsUntracked guifg=#666666 guibg=#1c1c1c guisp=NONE blend=NONE gui=NONE
+hi GitSignsAddNr guifg=#5f875f guibg=NONE guisp=NONE blend=NONE gui=NONE
+hi GitSignsChangeNr guifg=#685742 guibg=NONE guisp=NONE blend=NONE gui=NONE
+hi GitSignsDeleteNr guifg=#b36d43 guibg=NONE guisp=NONE blend=NONE gui=NONE
+hi GitSignsChangedeleteNr guifg=#b36d43 guibg=NONE guisp=NONE blend=NONE gui=NONE
+hi GitSignsTopdeleteNr guifg=#b36d43 guibg=NONE guisp=NONE blend=NONE gui=NONE
+hi GitSignsUntrackedNr guifg=#666666 guibg=NONE guisp=NONE blend=NONE gui=NONE
+hi GitSignsAddCul guifg=#5f875f guibg=NONE guisp=NONE blend=NONE gui=NONE
+hi GitSignsChangeCul guifg=#685742 guibg=NONE guisp=NONE blend=NONE gui=NONE
+hi GitSignsDeleteCul guifg=#b36d43 guibg=NONE guisp=NONE blend=NONE gui=NONE
+hi GitSignsChangedeleteCul guifg=#b36d43 guibg=NONE guisp=NONE blend=NONE gui=NONE
+hi GitSignsTopdeleteCul guifg=#b36d43 guibg=NONE guisp=NONE blend=NONE gui=NONE
+hi GitSignsUntrackedCul guifg=#666666 guibg=NONE guisp=NONE blend=NONE gui=NONE
+hi GitSignsCurrentLineBlame guifg=#666666 guibg=NONE guisp=NONE blend=NONE gui=italic
+hi GitSignsStagedAdd guifg=#4a6a4a guibg=#1c1c1c guisp=NONE blend=NONE gui=NONE
+hi GitSignsStagedChange guifg=#524636 guibg=#1c1c1c guisp=NONE blend=NONE gui=NONE
+hi GitSignsStagedDelete guifg=#8a5535 guibg=#1c1c1c guisp=NONE blend=NONE gui=NONE
+hi GitSignsStagedChangedelete guifg=#8a5535 guibg=#1c1c1c guisp=NONE blend=NONE gui=NONE
+hi GitSignsStagedTopdelete guifg=#8a5535 guibg=#1c1c1c guisp=NONE blend=NONE gui=NONE
+hi GitSignsStagedAddNr guifg=#4a6a4a guibg=NONE guisp=NONE blend=NONE gui=NONE
+hi GitSignsStagedChangeNr guifg=#524636 guibg=NONE guisp=NONE blend=NONE gui=NONE
+hi GitSignsStagedDeleteNr guifg=#8a5535 guibg=NONE guisp=NONE blend=NONE gui=NONE
+hi GitSignsStagedChangedeleteNr guifg=#8a5535 guibg=NONE guisp=NONE blend=NONE gui=NONE
+hi GitSignsStagedTopdeleteNr guifg=#8a5535 guibg=NONE guisp=NONE blend=NONE gui=NONE
 hi htmlArg guifg=#5f875f guibg=NONE guisp=NONE blend=NONE gui=NONE
 hi htmlBold guifg=NONE guibg=NONE guisp=NONE blend=NONE gui=bold
 hi htmlBoldItalic guifg=NONE guibg=NONE guisp=NONE blend=NONE gui=bold,underline
@@ -370,6 +396,62 @@ hi TabLine guifg=#666666 guibg=#111111 guisp=NONE blend=NONE gui=NONE
 hi TabLineSel guifg=#111111 guibg=#78834b guisp=NONE blend=NONE gui=bold
 hi TabLineSelSep guifg=#78834b guibg=#1c1c1c guisp=NONE blend=NONE gui=bold
 hi TabLineSep guifg=#111111 guibg=#222222 guisp=NONE blend=NONE gui=NONE
+" bufferline.nvim
+hi BufferLineFill guifg=NONE guibg=#111111 guisp=NONE blend=NONE gui=NONE
+hi BufferLineBackground guifg=#666666 guibg=#1c1c1c guisp=NONE blend=NONE gui=NONE
+hi BufferLineBuffer guifg=#666666 guibg=#1c1c1c guisp=NONE blend=NONE gui=NONE
+hi BufferLineBufferVisible guifg=#888888 guibg=#222222 guisp=NONE blend=NONE gui=NONE
+hi BufferLineBufferSelected guifg=#d7c483 guibg=#222222 guisp=NONE blend=NONE gui=bold
+hi BufferLineTab guifg=#666666 guibg=#1c1c1c guisp=NONE blend=NONE gui=NONE
+hi BufferLineTabSelected guifg=#d7c483 guibg=#222222 guisp=NONE blend=NONE gui=bold
+hi BufferLineTabClose guifg=#b36d43 guibg=#1c1c1c guisp=NONE blend=NONE gui=NONE
+hi BufferLineIndicatorSelected guifg=#78834b guibg=#222222 guisp=NONE blend=NONE gui=NONE
+hi BufferLineIndicatorVisible guifg=#685742 guibg=#222222 guisp=NONE blend=NONE gui=NONE
+hi BufferLineSeparator guifg=#111111 guibg=#1c1c1c guisp=NONE blend=NONE gui=NONE
+hi BufferLineSeparatorSelected guifg=#111111 guibg=#222222 guisp=NONE blend=NONE gui=NONE
+hi BufferLineSeparatorVisible guifg=#111111 guibg=#222222 guisp=NONE blend=NONE gui=NONE
+hi BufferLineCloseButton guifg=#666666 guibg=#1c1c1c guisp=NONE blend=NONE gui=NONE
+hi BufferLineCloseButtonSelected guifg=#b36d43 guibg=#222222 guisp=NONE blend=NONE gui=NONE
+hi BufferLineCloseButtonVisible guifg=#888888 guibg=#222222 guisp=NONE blend=NONE gui=NONE
+hi BufferLineModified guifg=#685742 guibg=#1c1c1c guisp=NONE blend=NONE gui=NONE
+hi BufferLineModifiedSelected guifg=#c9a554 guibg=#222222 guisp=NONE blend=NONE gui=NONE
+hi BufferLineModifiedVisible guifg=#685742 guibg=#222222 guisp=NONE blend=NONE gui=NONE
+hi BufferLineDuplicate guifg=#444444 guibg=#1c1c1c guisp=NONE blend=NONE gui=italic
+hi BufferLineDuplicateSelected guifg=#666666 guibg=#222222 guisp=NONE blend=NONE gui=italic
+hi BufferLineDuplicateVisible guifg=#555555 guibg=#222222 guisp=NONE blend=NONE gui=italic
+hi BufferLinePick guifg=#b36d43 guibg=#1c1c1c guisp=NONE blend=NONE gui=bold
+hi BufferLinePickSelected guifg=#b36d43 guibg=#222222 guisp=NONE blend=NONE gui=bold
+hi BufferLinePickVisible guifg=#b36d43 guibg=#222222 guisp=NONE blend=NONE gui=bold
+hi BufferLineDiagnostic guifg=#666666 guibg=#1c1c1c guisp=NONE blend=NONE gui=NONE
+hi BufferLineDiagnosticSelected guifg=#666666 guibg=#222222 guisp=NONE blend=NONE gui=NONE
+hi BufferLineDiagnosticVisible guifg=#666666 guibg=#222222 guisp=NONE blend=NONE gui=NONE
+hi BufferLineError guifg=#b36d43 guibg=#1c1c1c guisp=NONE blend=NONE gui=NONE
+hi BufferLineErrorSelected guifg=#b36d43 guibg=#222222 guisp=NONE blend=NONE gui=NONE
+hi BufferLineErrorVisible guifg=#b36d43 guibg=#222222 guisp=NONE blend=NONE gui=NONE
+hi BufferLineErrorDiagnostic guifg=#b36d43 guibg=#1c1c1c guisp=NONE blend=NONE gui=NONE
+hi BufferLineErrorDiagnosticSelected guifg=#b36d43 guibg=#222222 guisp=NONE blend=NONE gui=NONE
+hi BufferLineErrorDiagnosticVisible guifg=#b36d43 guibg=#222222 guisp=NONE blend=NONE gui=NONE
+hi BufferLineWarning guifg=#685742 guibg=#1c1c1c guisp=NONE blend=NONE gui=NONE
+hi BufferLineWarningSelected guifg=#685742 guibg=#222222 guisp=NONE blend=NONE gui=NONE
+hi BufferLineWarningVisible guifg=#685742 guibg=#222222 guisp=NONE blend=NONE gui=NONE
+hi BufferLineWarningDiagnostic guifg=#685742 guibg=#1c1c1c guisp=NONE blend=NONE gui=NONE
+hi BufferLineWarningDiagnosticSelected guifg=#685742 guibg=#222222 guisp=NONE blend=NONE gui=NONE
+hi BufferLineWarningDiagnosticVisible guifg=#685742 guibg=#222222 guisp=NONE blend=NONE gui=NONE
+hi BufferLineHint guifg=#5f875f guibg=#1c1c1c guisp=NONE blend=NONE gui=NONE
+hi BufferLineHintSelected guifg=#5f875f guibg=#222222 guisp=NONE blend=NONE gui=NONE
+hi BufferLineHintVisible guifg=#5f875f guibg=#222222 guisp=NONE blend=NONE gui=NONE
+hi BufferLineHintDiagnostic guifg=#5f875f guibg=#1c1c1c guisp=NONE blend=NONE gui=NONE
+hi BufferLineHintDiagnosticSelected guifg=#5f875f guibg=#222222 guisp=NONE blend=NONE gui=NONE
+hi BufferLineHintDiagnosticVisible guifg=#5f875f guibg=#222222 guisp=NONE blend=NONE gui=NONE
+hi BufferLineInfo guifg=#78824b guibg=#1c1c1c guisp=NONE blend=NONE gui=NONE
+hi BufferLineInfoSelected guifg=#78824b guibg=#222222 guisp=NONE blend=NONE gui=NONE
+hi BufferLineInfoVisible guifg=#78824b guibg=#222222 guisp=NONE blend=NONE gui=NONE
+hi BufferLineInfoDiagnostic guifg=#78824b guibg=#1c1c1c guisp=NONE blend=NONE gui=NONE
+hi BufferLineInfoDiagnosticSelected guifg=#78824b guibg=#222222 guisp=NONE blend=NONE gui=NONE
+hi BufferLineInfoDiagnosticVisible guifg=#78824b guibg=#222222 guisp=NONE blend=NONE gui=NONE
+hi BufferLineNumbers guifg=#666666 guibg=#1c1c1c guisp=NONE blend=NONE gui=NONE
+hi BufferLineNumbersSelected guifg=#d7c483 guibg=#222222 guisp=NONE blend=NONE gui=bold
+hi BufferLineNumbersVisible guifg=#888888 guibg=#222222 guisp=NONE blend=NONE gui=NONE
 hi TelescopeMultiIcon guifg=NONE guibg=NONE guisp=NONE blend=NONE gui=NONE
 hi TelescopeMultiSelection guifg=NONE guibg=NONE guisp=NONE blend=NONE gui=NONE
 hi TelescopeNormal guifg=NONE guibg=NONE guisp=NONE blend=NONE gui=NONE
@@ -502,6 +584,19 @@ if get(g:, "miasma_transparent", 0)
   hi NeoTreeGitUnstaged guibg=NONE
   hi NeoTreeGitUntracked guibg=NONE
 
+  " gitsigns
+  hi GitSignsAdd guibg=NONE
+  hi GitSignsChange guibg=NONE
+  hi GitSignsDelete guibg=NONE
+  hi GitSignsChangedelete guibg=NONE
+  hi GitSignsTopdelete guibg=NONE
+  hi GitSignsUntracked guibg=NONE
+  hi GitSignsStagedAdd guibg=NONE
+  hi GitSignsStagedChange guibg=NONE
+  hi GitSignsStagedDelete guibg=NONE
+  hi GitSignsStagedChangedelete guibg=NONE
+  hi GitSignsStagedTopdelete guibg=NONE
+
   " telescope
   hi TelescopeNormal guibg=NONE
   hi TelescopeBorder guibg=NONE
@@ -534,5 +629,29 @@ if get(g:, "miasma_transparent", 0)
 
   " lazy.nvim
   hi LazyNormal guibg=NONE
+
+  " bufferline
+  hi BufferLineFill guibg=NONE
+  hi BufferLineBackground guibg=NONE
+  hi BufferLineBuffer guibg=NONE
+  hi BufferLineBufferVisible guibg=NONE
+  hi BufferLineBufferSelected guibg=NONE
+  hi BufferLineTab guibg=NONE
+  hi BufferLineTabSelected guibg=NONE
+  hi BufferLineTabClose guibg=NONE
+  hi BufferLineIndicatorSelected guibg=NONE
+  hi BufferLineIndicatorVisible guibg=NONE
+  hi BufferLineSeparator guibg=NONE
+  hi BufferLineSeparatorSelected guibg=NONE
+  hi BufferLineSeparatorVisible guibg=NONE
+  hi BufferLineCloseButton guibg=NONE
+  hi BufferLineCloseButtonSelected guibg=NONE
+  hi BufferLineCloseButtonVisible guibg=NONE
+  hi BufferLineModified guibg=NONE
+  hi BufferLineModifiedSelected guibg=NONE
+  hi BufferLineModifiedVisible guibg=NONE
+  hi BufferLineDuplicate guibg=NONE
+  hi BufferLineDuplicateSelected guibg=NONE
+  hi BufferLineDuplicateVisible guibg=NONE
 
 endif
