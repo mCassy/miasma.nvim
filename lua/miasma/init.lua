@@ -57,6 +57,17 @@ function M.load()
     end
   end
 
+  -- Merge user overrides
+  for name, overrides in pairs(config.overrides) do
+    if groups[name] then
+      -- Merge with existing group
+      groups[name] = vim.tbl_extend("force", groups[name], overrides)
+    else
+      -- New group from overrides
+      groups[name] = overrides
+    end
+  end
+
   -- Apply all highlight groups
   for name, hl in pairs(groups) do
     vim.api.nvim_set_hl(0, name, hl)

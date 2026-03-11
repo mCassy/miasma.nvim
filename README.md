@@ -98,6 +98,7 @@ Configure the theme using the setup function (Neovim 0.8+):
 require("miasma").setup({
   transparent = false,     -- Enable transparent backgrounds
   terminal_colors = true,  -- Set terminal colors (0-15)
+  overrides = {},          -- Highlight group overrides
 })
 ```
 
@@ -109,6 +110,32 @@ vim.g.miasma_transparent = 1  -- Enable transparency
 
 ```vim
 let g:miasma_transparent = 1
+```
+
+### Highlight Group Overrides
+
+You can override any highlight group using the `overrides` option. Overrides are **merged** with the default highlight definitions, so you only need to specify the attributes you want to change:
+
+```lua
+require("miasma").setup({
+  overrides = {
+    -- Add italic to comments (merges with existing fg color)
+    Comment = { italic = true },
+
+    -- Change function color
+    Function = { fg = "#8fb573" },
+
+    -- Completely restyle a group
+    Keyword = { fg = "#d7c484", bold = true },
+
+    -- Override plugin highlights
+    TelescopeBorder = { fg = "#5f875f" },
+
+    -- Link groups
+    ["@variable"] = { link = "Identifier" },
+  },
+})
+vim.cmd("colorscheme miasma")
 ```
 
 ### Accessing the Color Palette

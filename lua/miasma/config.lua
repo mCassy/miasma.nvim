@@ -1,11 +1,13 @@
 ---@class MiasmaConfig
 ---@field transparent boolean Enable transparent backgrounds
 ---@field terminal_colors boolean Set terminal colors (0-15)
+---@field overrides table<string, vim.api.keyset.highlight> Highlight group overrides
 
 ---@type MiasmaConfig
 local defaults = {
   transparent = false,
   terminal_colors = true,
+  overrides = {},
 }
 
 ---@type MiasmaConfig
@@ -26,12 +28,17 @@ function M.setup(opts)
       M[k] = v
     end
   end
+
+  -- Always copy overrides if provided
+  if opts.overrides then
+    M.overrides = opts.overrides
+  end
 end
 
 ---Reset config to defaults
 function M.reset()
   for k, v in pairs(defaults) do
-    M[k] = v
+    M[k] = vim.deepcopy(v)
   end
 end
 
