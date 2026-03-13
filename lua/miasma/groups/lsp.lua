@@ -13,7 +13,7 @@ local function get()
     -- Diagnostics
     DiagnosticError = { fg = p.orange },
     DiagnosticWarn = { fg = p.brown },
-    DiagnosticWarning = { fg = p.orange },
+    DiagnosticWarning = { fg = p.brown },
     DiagnosticInfo = { fg = p.green },
     DiagnosticHint = { fg = p.green },
     DiagnosticOk = { fg = p.olive },
@@ -31,7 +31,7 @@ local function get()
     DiagnosticVirtualTextInfo = { fg = p.olive, bg = transparent and p.none or p.bg },
     DiagnosticVirtualTextHint = { fg = p.olive, bg = transparent and p.none or p.bg },
     DiagnosticVirtualTextOk = { link = "DiagnosticOk" },
-    DiagnosticVirtualTextWarning = { fg = p.fg },
+    DiagnosticVirtualTextWarning = { fg = p.brown, bg = transparent and p.none or p.bg },
 
     -- Floating diagnostics
     DiagnosticFloatingError = { link = "DiagnosticError" },
@@ -42,14 +42,14 @@ local function get()
     DiagnosticFloatingWarning = { link = "DiagnosticWarning" },
     DiagnosticErrorFloating = { link = "DiagnosticError" },
     DiagnosticHintFloating = { fg = p.olive },
-    DiagnosticWarningFloating = { fg = p.fg },
+    DiagnosticWarningFloating = { link = "DiagnosticWarn" },
 
     -- Underline diagnostics
-    DiagnosticUnderlineError = { underline = true },
-    DiagnosticUnderlineWarn = { underline = true },
-    DiagnosticUnderlineInfo = { underline = true },
-    DiagnosticUnderlineHint = { underline = true },
-    DiagnosticUnderlineOk = { underline = true },
+    DiagnosticUnderlineError = { sp = p.orange, underline = true },
+    DiagnosticUnderlineWarn = { sp = p.brown, underline = true },
+    DiagnosticUnderlineInfo = { sp = p.olive, underline = true },
+    DiagnosticUnderlineHint = { sp = p.green, underline = true },
+    DiagnosticUnderlineOk = { sp = p.olive, underline = true },
 
     -- Special diagnostics
     DiagnosticUnnecessary = { fg = p.gray, underline = true },

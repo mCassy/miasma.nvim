@@ -10,6 +10,7 @@ A color scheme for `{neo,}vim` inspired by the woods.
 
 - [blink.cmp](https://github.com/Saghen/blink.cmp) - Completion menu and documentation
 - [bufferline.nvim](https://github.com/akinsho/bufferline.nvim) - Buffer tabs with diagnostics
+- [flash.nvim](https://github.com/folke/flash.nvim) - Navigation and search labels
 - [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) - Git signs, blame, and staged indicators
 - [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim) - Indent guides
 - [lazy.nvim](https://github.com/folke/lazy.nvim) - Plugin manager UI
@@ -18,7 +19,9 @@ A color scheme for `{neo,}vim` inspired by the woods.
 - [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim) - File explorer with git status
 - [noice.nvim](https://github.com/folke/noice.nvim) - Command line popup
 - [nvim-scrollbar](https://github.com/petertriho/nvim-scrollbar) - Scrollbar with diagnostics
+- [snacks.nvim](https://github.com/folke/snacks.nvim) - Dashboard, notifier, picker, and more
 - [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) - Fuzzy finder
+- [trouble.nvim](https://github.com/folke/trouble.nvim) - Diagnostics list
 - [which-key.nvim](https://github.com/folke/which-key.nvim) - Keybinding popup
 
 Also includes support for:
