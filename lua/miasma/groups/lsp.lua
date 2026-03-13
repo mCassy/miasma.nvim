@@ -56,9 +56,9 @@ local function get()
     DiagnosticDeprecated = { sp = p.brown, strikethrough = true },
 
     -- LSP references
-    LspReferenceText = { fg = p.fg, bg = p.ibl_scope, sp = p.lsp_ref_special, bold = true, undercurl = true },
-    LspReferenceRead = { fg = p.green, sp = p.lsp_ref_special, bold = true, undercurl = true },
-    LspReferenceWrite = { fg = p.green, sp = p.lsp_ref_special, bold = true, undercurl = true },
+    LspReferenceText = { fg = p.fg, bg = p.ibl_scope, sp = p.lsp_ref_special, bold = true, underline = true },
+    LspReferenceRead = { fg = p.green, sp = p.lsp_ref_special, bold = true, underline = true },
+    LspReferenceWrite = { fg = p.green, sp = p.lsp_ref_special, bold = true, underline = true },
 
     -- LSP UI
     LspBorderBG = { fg = p.brown, bg = transparent and p.none or p.bg },
