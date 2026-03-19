@@ -101,6 +101,7 @@ Configure the theme using the setup function (Neovim 0.8+):
 require("miasma").setup({
   transparent = false,     -- Enable transparent backgrounds
   terminal_colors = true,  -- Set terminal colors (0-15)
+  italics = true,          -- Enable italic styling
   overrides = {},          -- Highlight group overrides
 })
 ```

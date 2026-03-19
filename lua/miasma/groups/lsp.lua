@@ -6,6 +6,7 @@ local config = require("miasma.config")
 local function get()
   local p = palette
   local transparent = config.transparent
+  local italic = config.italics
 
   local bg_dark = transparent and p.none or p.dark
 
@@ -57,13 +58,13 @@ local function get()
 
     -- LSP references
     LspReferenceText = { fg = p.fg, bg = p.ibl_scope, sp = p.lsp_ref_special, bold = true, underline = true },
-    LspReferenceRead = { fg = p.green, sp = p.lsp_ref_special, bold = true, underline = true },
-    LspReferenceWrite = { fg = p.green, sp = p.lsp_ref_special, bold = true, underline = true },
+    LspReferenceRead = { fg = p.green, bg = p.ibl_scope, sp = p.lsp_ref_special, bold = true, underline = true },
+    LspReferenceWrite = { fg = p.orange, bg = p.ibl_scope, sp = p.lsp_ref_special, bold = true, underline = true },
 
     -- LSP UI
     LspBorderBG = { fg = p.brown, bg = transparent and p.none or p.bg },
     LspFloatWinNormal = { fg = p.fg, bg = p.ibl_scope },
-    LspSignatureActiveParameter = { sp = p.lsp_sig_active, bold = true, italic = true, underline = true },
+    LspSignatureActiveParameter = { sp = p.lsp_sig_active, bold = true, italic = italic, underline = true },
     LspCodeLens = { link = "Comment" },
     LspInlayHint = { fg = p.gray, bg = transparent and p.none or p.dark },
 
@@ -87,7 +88,7 @@ local function get()
     NvimSpacing = { link = "Normal" },
     NvimString = { link = "String" },
 
-    -- LSP semantic tokens
+    -- LSP semantic tokens (types)
     ["@lsp.type.class"] = { link = "Type" },
     ["@lsp.type.comment"] = { link = "Comment" },
     ["@lsp.type.decorator"] = { link = "Function" },
@@ -108,6 +109,27 @@ local function get()
     ["@lsp.type.type"] = { link = "Type" },
     ["@lsp.type.typeParameter"] = { link = "Type" },
     ["@lsp.type.variable"] = { link = "Identifier" },
+
+    -- LSP semantic token modifiers
+    ["@lsp.mod.deprecated"] = { strikethrough = true },
+    ["@lsp.mod.readonly"] = { italic = italic },
+    ["@lsp.mod.constant"] = { link = "Constant" },
+    ["@lsp.mod.static"] = { italic = italic },
+    ["@lsp.mod.async"] = { italic = italic },
+    ["@lsp.mod.defaultLibrary"] = { link = "Special" },
+    ["@lsp.mod.abstract"] = { italic = italic },
+    ["@lsp.mod.virtual"] = { italic = italic },
+
+    -- LSP semantic token type + modifier combinations
+    ["@lsp.typemod.function.defaultLibrary"] = { link = "Special" },
+    ["@lsp.typemod.method.defaultLibrary"] = { link = "Special" },
+    ["@lsp.typemod.variable.defaultLibrary"] = { link = "Special" },
+    ["@lsp.typemod.variable.readonly"] = { fg = p.rust, italic = italic },
+    ["@lsp.typemod.variable.constant"] = { link = "Constant" },
+    ["@lsp.typemod.property.readonly"] = { fg = p.rust, italic = italic },
+    ["@lsp.typemod.parameter.readonly"] = { italic = italic },
+    ["@lsp.typemod.function.async"] = { fg = p.olive, italic = italic },
+    ["@lsp.typemod.method.async"] = { fg = p.olive, italic = italic },
   }
 end
 

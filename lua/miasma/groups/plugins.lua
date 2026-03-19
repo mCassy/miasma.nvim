@@ -6,6 +6,7 @@ local config = require("miasma.config")
 local function get()
   local p = palette
   local transparent = config.transparent
+  local italic = config.italics
 
   local bg = transparent and p.none or p.bg
   local bg_dark = transparent and p.none or p.dark
@@ -48,7 +49,7 @@ local function get()
     GitSignsChangedeleteCul = { fg = p.orange },
     GitSignsTopdeleteCul = { fg = p.orange },
     GitSignsUntrackedCul = { fg = p.gray },
-    GitSignsCurrentLineBlame = { fg = p.gray, italic = true },
+    GitSignsCurrentLineBlame = { fg = p.gray, italic = italic },
     -- Staged variants (dimmed)
     GitSignsStagedAdd = { fg = p.staged_add, bg = bg_dark },
     GitSignsStagedChange = { fg = p.staged_change, bg = bg_dark },
@@ -137,9 +138,9 @@ local function get()
     BufferLineModified = { fg = p.brown, bg = bg_dark },
     BufferLineModifiedSelected = { fg = p.tan, bg = bg },
     BufferLineModifiedVisible = { fg = p.brown, bg = bg },
-    BufferLineDuplicate = { fg = p.duplicate, bg = bg_dark, italic = true },
-    BufferLineDuplicateSelected = { fg = p.gray, bg = bg, italic = true },
-    BufferLineDuplicateVisible = { fg = p.duplicate_visible, bg = bg, italic = true },
+    BufferLineDuplicate = { fg = p.duplicate, bg = bg_dark, italic = italic },
+    BufferLineDuplicateSelected = { fg = p.gray, bg = bg, italic = italic },
+    BufferLineDuplicateVisible = { fg = p.duplicate_visible, bg = bg, italic = italic },
     BufferLinePick = { fg = p.orange, bg = bg_dark, bold = true },
     BufferLinePickSelected = { fg = p.orange, bg = bg, bold = true },
     BufferLinePickVisible = { fg = p.orange, bg = bg, bold = true },

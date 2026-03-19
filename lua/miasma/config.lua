@@ -1,12 +1,14 @@
 ---@class MiasmaConfig
 ---@field transparent boolean Enable transparent backgrounds
 ---@field terminal_colors boolean Set terminal colors (0-15)
+---@field italics boolean Enable italic styling (default: true)
 ---@field overrides table<string, vim.api.keyset.highlight> Highlight group overrides
 
 ---@type MiasmaConfig
 local defaults = {
   transparent = false,
   terminal_colors = true,
+  italics = true,
   overrides = {},
 }
 
