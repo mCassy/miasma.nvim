@@ -1,13 +1,15 @@
 local palette = require("miasma.palette")
+local config = require("miasma.config")
 
 ---Get syntax highlight groups
 ---@return table<string, vim.api.keyset.highlight>
 local function get()
   local p = palette
+  local italic = config.italics
 
   return {
     -- Standard syntax groups
-    Comment = { fg = p.gray },
+    Comment = { fg = p.gray, italic = italic },
     Constant = { fg = p.rust },
     String = { fg = p.brown },
     Character = { link = "Constant" },
@@ -57,17 +59,17 @@ local function get()
     htmlArg = { fg = p.green },
     htmlLink = { link = "Underlined" },
     htmlBold = { bold = true },
-    htmlItalic = { italic = true },
+    htmlItalic = { italic = italic },
     htmlUnderline = { underline = true },
-    htmlBoldItalic = { bold = true, italic = true },
+    htmlBoldItalic = { bold = true, italic = italic },
     htmlBoldUnderline = { bold = true, underline = true },
-    htmlUnderlineItalic = { underline = true, italic = true },
-    htmlBoldUnderlineItalic = { bold = true, underline = true, italic = true },
+    htmlUnderlineItalic = { underline = true, italic = italic },
+    htmlBoldUnderlineItalic = { bold = true, underline = true, italic = italic },
     htmlH1 = { bold = true },
 
     -- Markdown
     markdownBold = { bold = true },
-    markdownItalic = { italic = true },
+    markdownItalic = { italic = italic },
     markdownCodeBlock = { link = "String" },
     markdownCodeDelimiter = { link = "NonText" },
     markdownHeadingRule = { link = "NonText" },
