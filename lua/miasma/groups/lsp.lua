@@ -6,7 +6,7 @@ local config = require("miasma.config")
 local function get()
   local p = palette
   local transparent = config.transparent
-  local italic = config.italics
+  local italic = config.styles.modifiers.italic
 
   local bg_dark = transparent and p.none or p.dark
 

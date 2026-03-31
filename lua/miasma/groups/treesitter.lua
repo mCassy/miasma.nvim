@@ -5,13 +5,13 @@ local config = require("miasma.config")
 ---@return table<string, vim.api.keyset.highlight>
 local function get()
   local p = palette
-  local italic = config.italics
+  local styles = config.styles
 
   return {
     -- Identifiers
-    ["@variable"] = { fg = p.fg, italic = italic },
-    ["@variable.builtin"] = { fg = p.rust, italic = italic },
-    ["@variable.parameter"] = { fg = p.fg, italic = italic },
+    ["@variable"] = { fg = p.fg, italic = styles.variables.italic },
+    ["@variable.builtin"] = { fg = p.rust, italic = styles.variables.italic },
+    ["@variable.parameter"] = { fg = p.fg, italic = styles.variables.italic },
     ["@variable.member"] = { link = "Identifier" },
 
     -- Constants
@@ -93,9 +93,9 @@ local function get()
     ["@comment.note"] = { link = "DiagnosticHint" },
 
     -- Properties/Fields
-    ["@property"] = { fg = p.fg, italic = italic },
+    ["@property"] = { fg = p.fg, italic = styles.variables.italic },
     ["@field"] = { link = "Identifier" },
-    ["@parameter"] = { fg = p.fg, italic = italic },
+    ["@parameter"] = { fg = p.fg, italic = styles.variables.italic },
 
     -- Tags
     ["@tag"] = { link = "Tag" },
@@ -105,7 +105,7 @@ local function get()
     -- Text/Markup
     ["@text"] = { link = "Normal" },
     ["@text.strong"] = { bold = true },
-    ["@text.emphasis"] = { italic = italic },
+    ["@text.emphasis"] = { italic = styles.markup.italic },
     ["@text.underline"] = { underline = true },
     ["@text.strike"] = { strikethrough = true },
     ["@text.title"] = { link = "Title" },
@@ -119,7 +119,7 @@ local function get()
     -- Markup (new Neovim captures)
     ["@markup"] = { link = "Normal" },
     ["@markup.strong"] = { bold = true },
-    ["@markup.emphasis"] = { italic = italic },
+    ["@markup.emphasis"] = { italic = styles.markup.italic },
     ["@markup.underline"] = { underline = true },
     ["@markup.strike"] = { strikethrough = true },
     ["@markup.heading"] = { link = "Title" },

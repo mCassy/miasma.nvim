@@ -1,14 +1,33 @@
+---@class MiasmaStyleConfig
+---@field italic boolean Enable italic for this category
+
+---@class MiasmaStyles
+---@field comments MiasmaStyleConfig Style for comments (default: { italic = true })
+---@field keywords MiasmaStyleConfig Style for keywords and statements (default: { italic = false })
+---@field variables MiasmaStyleConfig Style for variables, parameters, and properties (default: { italic = true })
+---@field modifiers MiasmaStyleConfig Style for LSP semantic token modifiers (default: { italic = true })
+---@field markup MiasmaStyleConfig Style for markup emphasis and html/markdown italic (default: { italic = true })
+---@field plugins MiasmaStyleConfig Style for plugin-specific groups like git blame (default: { italic = true })
+
 ---@class MiasmaConfig
 ---@field transparent boolean Enable transparent backgrounds
 ---@field terminal_colors boolean Set terminal colors (0-15)
----@field italics boolean Enable italic styling (default: true)
+---@field italics? boolean Legacy option: set false to disable all italics (overrides styles)
+---@field styles MiasmaStyles Per-category style controls
 ---@field overrides table<string, vim.api.keyset.highlight> Highlight group overrides
 
 ---@type MiasmaConfig
 local defaults = {
   transparent = false,
   terminal_colors = true,
-  italics = true,
+  styles = {
+    comments = { italic = true },
+    keywords = { italic = false },
+    variables = { italic = true },
+    modifiers = { italic = true },
+    markup = { italic = true },
+    plugins = { italic = true },
+  },
   overrides = {},
 }
 
@@ -25,8 +44,22 @@ function M.setup(opts)
     opts.transparent = true
   end
 
+  -- Handle legacy `italics` boolean as a kill switch
+  if opts.italics == false then
+    opts.styles = opts.styles or {}
+    for category, _ in pairs(defaults.styles) do
+      if opts.styles[category] == nil then
+        opts.styles[category] = { italic = false }
+      end
+    end
+  end
+
   for k, v in pairs(opts) do
-    if defaults[k] ~= nil then
+    if k == "styles" then
+      M.styles = vim.tbl_deep_extend("force", M.styles, v)
+    elseif k == "italics" then
+      -- Already handled above, skip
+    elseif defaults[k] ~= nil then
       M[k] = v
     end
   end

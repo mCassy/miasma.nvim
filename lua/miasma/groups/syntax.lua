@@ -5,11 +5,11 @@ local config = require("miasma.config")
 ---@return table<string, vim.api.keyset.highlight>
 local function get()
   local p = palette
-  local italic = config.italics
+  local styles = config.styles
 
   return {
     -- Standard syntax groups
-    Comment = { fg = p.gray, italic = italic },
+    Comment = { fg = p.gray, italic = styles.comments.italic },
     Constant = { fg = p.rust },
     String = { fg = p.brown },
     Character = { link = "Constant" },
@@ -20,12 +20,12 @@ local function get()
     Identifier = { fg = p.fg },
     Function = { fg = p.olive },
 
-    Statement = { fg = p.green, bold = true },
+    Statement = { fg = p.green, bold = true, italic = styles.keywords.italic },
     Conditional = { link = "Statement" },
     Repeat = { link = "Statement" },
     Label = { link = "Statement" },
     Operator = { link = "Delimiter" },
-    Keyword = { fg = p.green },
+    Keyword = { fg = p.green, italic = styles.keywords.italic },
     Exception = { link = "Statement" },
 
     PreProc = { link = "Keyword" },
@@ -59,17 +59,17 @@ local function get()
     htmlArg = { fg = p.green },
     htmlLink = { link = "Underlined" },
     htmlBold = { bold = true },
-    htmlItalic = { italic = italic },
+    htmlItalic = { italic = styles.markup.italic },
     htmlUnderline = { underline = true },
-    htmlBoldItalic = { bold = true, italic = italic },
+    htmlBoldItalic = { bold = true, italic = styles.markup.italic },
     htmlBoldUnderline = { bold = true, underline = true },
-    htmlUnderlineItalic = { underline = true, italic = italic },
-    htmlBoldUnderlineItalic = { bold = true, underline = true, italic = italic },
+    htmlUnderlineItalic = { underline = true, italic = styles.markup.italic },
+    htmlBoldUnderlineItalic = { bold = true, underline = true, italic = styles.markup.italic },
     htmlH1 = { bold = true },
 
     -- Markdown
     markdownBold = { bold = true },
-    markdownItalic = { italic = italic },
+    markdownItalic = { italic = styles.markup.italic },
     markdownCodeBlock = { link = "String" },
     markdownCodeDelimiter = { link = "NonText" },
     markdownHeadingRule = { link = "NonText" },

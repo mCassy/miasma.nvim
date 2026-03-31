@@ -101,8 +101,37 @@ Configure the theme using the setup function (Neovim 0.8+):
 require("miasma").setup({
   transparent = false,     -- Enable transparent backgrounds
   terminal_colors = true,  -- Set terminal colors (0-15)
-  italics = true,          -- Enable italic styling
+  styles = {               -- Per-category italic controls
+    comments  = { italic = true },   -- Comment, @comment
+    keywords  = { italic = false },  -- Keyword, Statement, @keyword.*
+    variables = { italic = true },   -- @variable, @property, @parameter
+    modifiers = { italic = true },   -- LSP semantic modifiers (readonly, async, etc.)
+    markup    = { italic = true },   -- @markup.emphasis, htmlItalic, markdownItalic
+    plugins   = { italic = true },   -- GitSignsCurrentLineBlame, BufferLineDuplicate
+  },
   overrides = {},          -- Highlight group overrides
+})
+```
+
+#### Italic Styles
+
+You can selectively enable or disable italics per category. For example, to disable italics only for keywords and variables:
+
+```lua
+require("miasma").setup({
+  styles = {
+    keywords = { italic = false },
+    variables = { italic = false },
+  },
+})
+vim.cmd("colorscheme miasma")
+```
+
+To disable all italics at once, use the legacy `italics` option as a kill switch:
+
+```lua
+require("miasma").setup({
+  italics = false,  -- Disables italics across all categories
 })
 ```
 
@@ -123,9 +152,6 @@ You can override any highlight group using the `overrides` option. Overrides are
 ```lua
 require("miasma").setup({
   overrides = {
-    -- Add italic to comments (merges with existing fg color)
-    Comment = { italic = true },
-
     -- Change function color
     Function = { fg = "#8fb573" },
 
