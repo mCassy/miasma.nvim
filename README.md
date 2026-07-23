@@ -41,6 +41,30 @@ https://github.com/xero/miasma.nvim
 
 ## Installation
 
+Using `vim.pack` (built-in plugin manager in Neovim 0.12+):
+
+```lua
+vim.pack.add({
+  "https://github.com/mCassy/miasma.nvim",
+})
+
+vim.cmd("colorscheme miasma")
+```
+
+Using `vim.pack` with options:
+
+```lua
+vim.pack.add({
+  "https://github.com/mCassy/miasma.nvim",
+})
+
+require("miasma").setup({
+  transparent = true,      -- Enable transparent backgrounds
+  terminal_colors = true,  -- Set terminal colors (default: true)
+})
+vim.cmd("colorscheme miasma")
+```
+
 Using `lazy.nvim`:
 
 ```lua
