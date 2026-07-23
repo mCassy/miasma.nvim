@@ -30,6 +30,7 @@
 ---@field visible string
 ---@field duplicate string
 ---@field duplicate_visible string
+---@field cursorline string
 
 ---@type MiasmaPalette
 local palette = {
@@ -50,6 +51,7 @@ local palette = {
   visible = "#888888",
   duplicate = "#444444",
   duplicate_visible = "#555555",
+  cursorline = "#2a2a2a",
 
   -- main colors
   green = "#5f875f",

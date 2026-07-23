@@ -10,6 +10,7 @@ local function get()
   local bg = transparent and p.none or p.bg
   local bg_dark = transparent and p.none or p.dark
   local bg_darker = transparent and p.none or p.darker
+  local cursorline = p.cursorline
 
   return {
     -- Core editor
@@ -24,9 +25,9 @@ local function get()
     -- Cursor
     Cursor = { fg = p.bg, bg = p.brown },
     lCursor = { fg = p.bg, bg = p.fg },
-    CursorLine = { bg = bg_dark },
-    CursorColumn = { bg = bg_dark },
-    CursorLineNr = { fg = p.olive, bg = bg_dark, bold = true },
+    CursorLine = { bg = cursorline },
+    CursorColumn = { bg = cursorline },
+    CursorLineNr = { fg = p.olive, bg = cursorline, bold = true },
     TermCursor = { reverse = true },
 
     -- Line numbers & columns
@@ -36,8 +37,8 @@ local function get()
     SignColumn = { fg = p.gray, bg = bg_dark },
     FoldColumn = { fg = p.gray, bg = bg_dark },
     ColorColumn = { bg = p.bg },
-    CursorLineFold = { link = "FoldColumn" },
-    CursorLineSign = { link = "SignColumn" },
+    CursorLineFold = { fg = p.gray, bg = cursorline },
+    CursorLineSign = { fg = p.gray, bg = cursorline },
 
     -- Splits & separators
     VertSplit = { fg = p.dark, bg = p.bg },
